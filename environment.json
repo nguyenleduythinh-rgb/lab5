@@ -2,7 +2,7 @@
   "id": "gorest-env",
   "name": "2474802010372_NguyenLeDuyThinh_GoRest_Env",
   "values": [
-    { "key": "token",   "value": "", "type": "secret",  "enabled": true },
+    { "key": "token",   "value": "", "type": "default", "enabled": true },
     { "key": "userID",  "value": "", "type": "default", "enabled": true },
     { "key": "baseURL", "value": "https://gorest.co.in", "type": "default", "enabled": true },
     { "key": "name",    "value": "", "type": "default", "enabled": true },
