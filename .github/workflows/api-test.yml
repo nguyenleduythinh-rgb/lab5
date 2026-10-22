@@ -20,13 +20,23 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      - name: Check token
+      - name: Check configuration
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
-          if [ -z "1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27" ]; then echo "TOKEN RONG"; else echo "TOKEN CO GIA TRI"; fi
+          if [ -z "1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27" ]; then
+            echo "TOKEN RONG"
+            exit 1
+          else
+            echo "TOKEN CO GIA TRI"
+          fi
 
       - name: Run API tests
+        env:
+          API_TOKEN: 1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27
         run: |
           newman run collection.json \
             -e environment.json \
+            --env-var "baseUrl=https://gorest.co.in" \
             --env-var "token=1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27" \
             -n 3
