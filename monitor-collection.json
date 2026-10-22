@@ -1,0 +1,32 @@
+{
+  "info": {
+    "name": "GoRest_Monitor",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET users - monitor",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Response time < 800ms', () => pm.expect(pm.response.responseTime).to.be.below(800));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/public/v2/users",
+          "host": ["{{baseURL}}"],
+          "path": ["public", "v2", "users"]
+        }
+      }
+    }
+  ]
+}
