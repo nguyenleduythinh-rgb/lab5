@@ -20,9 +20,13 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
+      - name: Check token
+        run: |
+          if [ -z "1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27" ]; then echo "TOKEN RONG"; else echo "TOKEN CO GIA TRI"; fi
+
       - name: Run API tests
         run: |
           newman run collection.json \
             -e environment.json \
-            --env-var "token=$ 1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27 " \
+            --env-var "token=1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27" \
             -n 3
