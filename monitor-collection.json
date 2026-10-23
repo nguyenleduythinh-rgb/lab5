@@ -8,6 +8,19 @@
   ],
   "item": [
     {
+      "name": "Warm-up",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/public/v2/users?per_page=1",
+          "host": ["{{baseURL}}"],
+          "path": ["public", "v2", "users"],
+          "query": [{ "key": "per_page", "value": "1" }]
+        }
+      }
+    },
+    {
       "name": "GET users - monitor",
       "event": [
         {
