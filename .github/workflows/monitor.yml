@@ -23,6 +23,5 @@ jobs:
       - name: Run monitor
         run: |
           newman run monitor-collection.json \
-            -e environment.json \
-            --env-var "baseUrl=https://gorest.co.in" \
+            --env-var "baseURL=https://gorest.co.in" \
             --env-var "token=1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27"
