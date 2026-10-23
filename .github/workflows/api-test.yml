@@ -22,7 +22,7 @@ jobs:
 
       - name: Check configuration
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+          API_TOKEN: 1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27
         run: |
           if [ -z "1858910ff7b0f978783fbce9216b10267335a55b33973aaa73ba3c25ba02dd27" ]; then
             echo "TOKEN RONG"
